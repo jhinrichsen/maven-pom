@@ -33,6 +33,14 @@ The result is a standalone statically linked executable for your platform.
 When called without any parameters, or -h, the Usage is displayed:
 
 ----
+Usage: maven-pom [options] <path to pom.xml> ...
+Show POM elements on stdout
+  -artifact
+        Show artifact
+  -group
+        Show group
+  -version
+        Show version (default true)
 ----
 
 == Versioning
