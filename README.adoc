@@ -24,8 +24,6 @@ Print GAV from one or many POMs to stdout.
 
 ----
 % go get github/jhinrichsen/maven-pom
-% cd ${HOME}/go/src/github/jhinrichsen/maven-pom
-% go install
 ----
 
 The result is a standalone statically linked executable for your platform.
