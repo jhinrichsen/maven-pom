@@ -51,4 +51,3 @@ Long story short: semver.
 
 MIT
 
-
