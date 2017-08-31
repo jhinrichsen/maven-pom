@@ -2,9 +2,9 @@
 // Exit codes:
 //      1: missing arguments
 //      2: unsupported ModelVersion in POM
-　
+
 package main
-　
+
 import (
         "encoding/xml"
         "flag"
@@ -15,27 +15,27 @@ import (
         "path"
         "strings"
 )
-　
+
 const (
         supportedMavenVersion = "4.0.0"
 )
-　
+
 var (
         showArtifact = flag.Bool("artifact", false, "Show artifact")
         showGroup    = flag.Bool("group", false, "Show group")
         showVersion  = flag.Bool("version", true, "Show version")
 )
-　
+
 type Project struct {
         XMLName xml.Name `xml:"project"`
-　
+
         ModelVersion string `xml:"modelVersion"`
-　
+
         Group    string `xml:"groupId"`
         Artifact string `xml:"artifactId"`
         Version  string `xml:"version"`
 }
-　
+
 func main() {
         flag.Usage = func() {
                 fmt.Fprintf(os.Stderr,
@@ -50,7 +50,7 @@ func main() {
                 flag.Usage()
                 os.Exit(1)
         }
-　
+
         for _, filename := range flag.Args() {
                 buf, err := ioutil.ReadFile(filename)
                 if err != nil {
