@@ -26,6 +26,7 @@ var (
 	showVersion  = flag.Bool("version", true, "Show version")
 )
 
+// Project is a subset of Maven POM 4.0.0
 type Project struct {
 	XMLName xml.Name `xml:"project"`
 
