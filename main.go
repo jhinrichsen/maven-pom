@@ -1,4 +1,4 @@
-// Read POM elements and show on stdout
+// Read POM elements and print to stdout
 // Exit codes:
 //      1: missing arguments
 //      2: unsupported ModelVersion in POM
@@ -20,12 +20,6 @@ const (
 	supportedMavenVersion = "4.0.0"
 )
 
-var (
-	showArtifact = flag.Bool("artifact", false, "Show artifact")
-	showGroup    = flag.Bool("group", false, "Show group")
-	showVersion  = flag.Bool("version", true, "Show version")
-)
-
 // Project is a subset of Maven POM 4.0.0
 type Project struct {
 	XMLName xml.Name `xml:"project"`
@@ -35,9 +29,18 @@ type Project struct {
 	Group    string `xml:"groupId"`
 	Artifact string `xml:"artifactId"`
 	Version  string `xml:"version"`
+
+	Modules []string `xml:"modules>module"`
 }
 
 func main() {
+	var (
+		showArtifact = flag.Bool("artifact", false, "Show artifact")
+		showGroup    = flag.Bool("group", false, "Show group")
+		showVersion  = flag.Bool("version", true, "Show version")
+		showModules  = flag.Bool("modules", false, "Show modules")
+	)
+
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr,
 			"Usage: %s [options] <path to pom.xml> ...\n",
@@ -78,6 +81,13 @@ func main() {
 		if *showVersion {
 			gav = append(gav, p.Version)
 		}
-		fmt.Println(strings.Join(gav, ":"))
+		if len(gav) > 0 {
+			fmt.Println(strings.Join(gav, ":"))
+		}
+		if *showModules {
+			for _, m := range p.Modules {
+				fmt.Println(m)
+			}
+		}
 	}
 }
