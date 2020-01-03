@@ -1,20 +1,13 @@
-= maven-pom
-Jochen Hinrichsen, jochen.hinrichsen@kambrium.net
-v1.0.0, 2013-07-04
-:numbered:
-:toc: left
-
-
 image::https://img.shields.io/travis/jhinrichsen/maven-pom.svg[alt="Travis build status", link="https://travis-ci.org/jhinrichsen/maven-pom"]
 image::https://goreportcard.com/badge/github.com/jhinrichsen/maven-pom[alt="Go Report Card", link="https://goreportcard.com/report/github.com/jhinrichsen/maven-pom"]
 image::https://img.shields.io/badge/code%20style-gofmt-brightgreen.svg[alt="gofmt", link="https://golang.org/cmd/gofmt/"]
 image::https://img.shields.io/badge/editor-vim-brightgreen.svg[alt="vim", link="http://www.vim.org"]
 
-
-     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
-     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
-     "OPTIONAL" in this document are to be interpreted as described in
-     RFC 2119.
+= maven-pom
+Jochen Hinrichsen, jochen.hinrichsen@kambrium.net
+v1.0.0, 2013-07-04
+:numbered:
+:toc: left
 
 == Maven GAV from pom.xml files
 
@@ -23,7 +16,7 @@ Print GAV from one or many POMs to stdout.
 == Installation
 
 ----
-% go get github/jhinrichsen/maven-pom
+% go get github.com/jhinrichsen/maven-pom
 ----
 
 The result is a standalone statically linked executable for your platform.
