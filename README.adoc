@@ -4,10 +4,6 @@ image::https://img.shields.io/badge/code%20style-gofmt-brightgreen.svg[alt="gofm
 image::https://img.shields.io/badge/editor-vim-brightgreen.svg[alt="vim", link="http://www.vim.org"]
 
 = maven-pom
-Jochen Hinrichsen, jochen.hinrichsen@kambrium.net
-v1.0.0, 2013-07-04
-:numbered:
-:toc: left
 
 == Maven GAV from pom.xml files
 
